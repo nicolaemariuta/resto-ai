@@ -1,17 +1,13 @@
 import { useState } from 'react'
 
+import MainLayout from './components/layout/MainLayout'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <h1 className="text-red-500">Resto AI</h1>
-      </div>
+  return <MainLayout />
 
-    </>
-  )
 }
 
 export default App
