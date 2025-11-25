@@ -1,8 +1,9 @@
-import Header from "./Header";
-import MapView from "../map/MapView";
-import ChatPanel from "../chat/ChatPanel";
 
 import { useUserLocation } from "../../hooks/useUserLocation";
+
+import Header from "./Header";
+import MapView from "../map/MapView";
+import ChatSidebar from "../chat/ChatSidebar";
 
 function MainLayout() {
   const { location, manuallySetLocation, status, source } = useUserLocation();
@@ -19,7 +20,7 @@ function MainLayout() {
 
         {/* Left sidebar (ChatPanel) */}
         <div className="w-full md:w-1/3 lg:w-1/4 h-full overflow-y-auto p-4 bg-slate-950">
-          <ChatPanel />
+          <ChatSidebar />
         </div>
 
         {/* Right content (MapView) */}
