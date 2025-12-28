@@ -1,12 +1,11 @@
-// import { useUserSettings } from "@/hooks/useUserSettings";
-import { useUserSettings } from "../../hooks/userSettings";
 
-export default function UserSettingsPanel() {
-  const {
-    settings,
-    updateSetting,
-    toggleSatelliteLayer,
-  } = useUserSettings();
+
+
+export default function UserSettingsPanel({
+  settings,
+  updateSetting,
+  toggleSatelliteLayer,
+})  {
 
   return (
     <div className="flex flex-col gap-6 p-2">

@@ -2,7 +2,11 @@ import { useState } from "react";
 import ChatPanel from "./ChatPanel";
 import UserSettingsPanel from "./UserSettingsPanel";
 
-export default function ChatSidebar() {
+export default function ChatSidebar({
+  settings,
+  updateSetting,
+  toggleSatelliteLayer,
+}) {
   const [activeTab, setActiveTab] = useState("chat"); // "chat" | "settings"
 
   return (
@@ -29,7 +33,15 @@ export default function ChatSidebar() {
 
       {/* Panel content */}
       <div className="flex-1 overflow-auto">
-        {activeTab === "chat" ? <ChatPanel /> : <UserSettingsPanel />}
+        {activeTab === "chat" ? (
+          <ChatPanel />
+        ) : (
+          <UserSettingsPanel
+            settings={settings}
+            updateSetting={updateSetting}
+            toggleSatelliteLayer={toggleSatelliteLayer}
+          />
+        )}
       </div>
 
     </section>
